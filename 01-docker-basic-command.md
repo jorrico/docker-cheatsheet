@@ -33,7 +33,15 @@ Container has a port that enables us to communicate with applications
 
 Some useful `OPTIONS`:
 1. `-d`
+2. `-pXXXX:YYYY` where `XXXX` and `YYYY` respectively are host and container IP
 
 ### [Stopping Running Container](https://docs.docker.com/engine/reference/commandline/stop/)
 
     $ docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+### [Show All Initialized Containers](https://docs.docker.com/engine/reference/commandline/ps/)
+
+    $  docker ps [OPTIONS]
+
+Some useful `OPTIONS`:
+1. `-a`
