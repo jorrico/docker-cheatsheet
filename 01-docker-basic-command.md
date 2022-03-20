@@ -19,20 +19,21 @@ Container has a port that enables us to communicate with applications
 ---
 ## Important Commands
 
-1. [Pulling an image](https://docs.docker.com/engine/reference/commandline/pull/)
+### [Pulling an image](https://docs.docker.com/engine/reference/commandline/pull/)
 
-```
-$ docker pull [OPTIONS] NAME[:TAG]
-```
+    $ docker pull [OPTIONS] NAME[:TAG]
 
-2. [Getting images info](https://docs.docker.com/engine/reference/commandline/images/)
+### [Getting images info](https://docs.docker.com/engine/reference/commandline/images/)
 
-```
-$ docker images [OPTIONS] [REPOSITORY[:TAG]]
-```
+    $ docker images [OPTIONS] [REPOSITORY[:TAG]]
 
-3. [Starting a Container for an Image](https://docs.docker.com/engine/reference/commandline/run/)
+### [Starting a Container With an Image](https://docs.docker.com/engine/reference/commandline/run/)
 
-```
-$ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
-```
+    $ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Some useful `OPTIONS`:
+1. `-d`
+
+### [Stopping Running Container](https://docs.docker.com/engine/reference/commandline/stop/)
+
+    $ docker stop [OPTIONS] CONTAINER [CONTAINER...]
