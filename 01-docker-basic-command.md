@@ -34,6 +34,7 @@ Container has a port that enables us to communicate with applications
 Some useful `OPTIONS`:
 1. `-d`
 2. `-pXXXX:YYYY` where `XXXX` and `YYYY` respectively are host and container IP
+3. `--name NAME`
 
 ### [Stopping Running Container](https://docs.docker.com/engine/reference/commandline/stop/)
 
@@ -45,3 +46,20 @@ Some useful `OPTIONS`:
 
 Some useful `OPTIONS`:
 1. `-a`
+
+---
+## Debugging a Container
+
+### [Pulling Logs](https://docs.docker.com/engine/reference/commandline/logs/)
+
+    $ docker logs [OPTIONS] CONTAINER
+
+### [Starting Interactive Terminal Session](https://docs.docker.com/engine/reference/commandline/exec/)
+
+    $ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Some useful `OPTIONS`:
+1. `-it`
+
+Some useful commands:
+1. `docker exec -it CONTAINER /bin/bash`
