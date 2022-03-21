@@ -1,4 +1,4 @@
-# Basic Docker Commands
+# Yet Another Docker Cheatsheet
 From: [TechWorld with Nana](https://youtu.be/3c-iBn73dDE)
 
 ---
@@ -35,6 +35,7 @@ Some useful `OPTIONS`:
 1. `-d`
 2. `-pXXXX:YYYY` where `XXXX` and `YYYY` respectively are host and container IP
 3. `--name NAME`
+4. [`--net NETWORK-NAME`](#networking-in-docker)
 
 ### [Stopping Running Container](https://docs.docker.com/engine/reference/commandline/stop/)
 
@@ -63,3 +64,14 @@ Some useful `OPTIONS`:
 
 Some useful commands:
 1. `docker exec -it CONTAINER /bin/bash`
+
+---
+## Networking in Docker
+
+### [Command for Networking](https://docs.docker.com/engine/reference/commandline/network/)
+
+    $ docker network COMMAND
+
+Some useful `COMMAND`s:
+1. `ls`
+2. `create NETWORK-NAME`
