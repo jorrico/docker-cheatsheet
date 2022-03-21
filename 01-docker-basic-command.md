@@ -36,6 +36,7 @@ Some useful `OPTIONS`:
 2. `-pXXXX:YYYY` where `XXXX` and `YYYY` respectively are host and container IP
 3. `--name NAME`
 4. [`--net NETWORK-NAME`](#networking-in-docker)
+5. `-e ENV_VARIABLE=ENV_VALUE`
 
 ### [Stopping Running Container](https://docs.docker.com/engine/reference/commandline/stop/)
 
@@ -54,6 +55,9 @@ Some useful `OPTIONS`:
 ### [Pulling Logs](https://docs.docker.com/engine/reference/commandline/logs/)
 
     $ docker logs [OPTIONS] CONTAINER
+
+Some useful `OPTIONS`:
+1. `-f`
 
 ### [Starting Interactive Terminal Session](https://docs.docker.com/engine/reference/commandline/exec/)
 
