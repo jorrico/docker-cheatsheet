@@ -42,6 +42,10 @@ Some useful `OPTIONS`:
 
     $ docker stop [OPTIONS] CONTAINER [CONTAINER...]
 
+### [Rerun Stopped Container](https://docs.docker.com/engine/reference/commandline/start/)
+
+    $ docker start [OPTIONS] CONTAINER [CONTAINER...]
+
 ### [Show All Initialized Containers](https://docs.docker.com/engine/reference/commandline/ps/)
 
     $  docker ps [OPTIONS]
@@ -66,7 +70,7 @@ Some useful `OPTIONS`:
 Some useful `OPTIONS`:
 1. `-it`
 
-Some useful commands:
+Some useful `COMMAND`s:
 1. `docker exec -it CONTAINER /bin/bash`
 
 ---
@@ -79,3 +83,37 @@ Some useful commands:
 Some useful `COMMAND`s:
 1. `ls`
 2. `create NETWORK-NAME`
+
+---
+### [Shortening `docker run` Command](https://docs.docker.com/compose/reference/)
+
+Running `docker run` with multiple configuration can be a little tedious. This is where `docker-compose` comes into picture. The command `docker-compose` takes `.yml` file to create container from image. The following command
+
+$ docker run p 8081:8081 -e SPARK_WORKER_CORES=1 -e SPARK_WORKER_MEMORY=512m --name spark-worker-1 --volumes shared-workspace:/opt/workspace andreper/spark-worker:3.0.0
+
+can be done using `docker-compose` on the following `.yml` file:
+
+```
+version:'3'
+services:
+    spark-worker-1:
+        image: andreper/spark-worker:3.0.0
+        container_name: spark-worker-1
+        environment:
+            - SPARK_WORKER_CORES=1
+            - SPARK_WORKER_MEMORY=512m
+        ports:
+            - 8081:8081
+        volumes:
+            - shared-workspace:/opt/workspace
+```
+
+Multiple services (**Read: Containers**) can be bundled in a single `.yml` file so that those containers run together ([example](https://github.com/cluster-apps-on-docker/spark-standalone-cluster-on-docker/blob/master/docker-compose.yml)). Docker automatically creates a network so we don't need to run `docker network create NETWORK-NAME` for it.
+
+To run using `.yml` file, use the following command:
+
+    $ docker-compose [-f <arg>...] [--profile <name>...] [options] [COMMAND] [ARGS...]
+
+If `-f FILENAME` is not provided, it will look for `docker-compose.yml` file.
+
+To shut down containers, either use `docker stop` or `docker-compose -f FILENAME down`. Good thing is, `docker-compose down` stops network
